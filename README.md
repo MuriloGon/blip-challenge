@@ -46,6 +46,18 @@ Status: 200 Ok
 ]
 ```
 
+#### Errors
+
+```bash
+Status: 404 Not Found
+```
+
+```json
+{
+  "error": "Org not found"
+}
+```
+
 ### <b>`GET`</b> /repositories/{orgName}/{language}
 
 List all repositories to a github organization and sort it based on repo's creation date.
@@ -93,4 +105,38 @@ Status: 200 Ok
     "createdAt": "2013-10-25T15:18:07.000Z"
   }
 ]
+```
+
+#### Errors
+
+```bash
+Status: 404 Not Found
+```
+
+```json
+{
+  "error": "Org not found"
+}
+```
+
+```bash
+Status: 400 Bad Request
+```
+
+```json
+{
+  "error": "\"sort\" must be one of [asc, desc]"
+}
+```
+
+```json
+{
+  "error": "\"qty\" must be a number"
+}
+```
+
+```json
+{
+  "error": "\"qty\" must be greater than 0"
+}
 ```
