@@ -1,7 +1,7 @@
 ## API Documentation
 
 ```bash
-export BASE_URL=http://localhost:3000
+export BASE_URL=https://murilo-take-challenge.herokuapp.com/
 ```
 
 ### <b>`GET`</b> /languages/{orgName}
