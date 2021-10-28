@@ -12,9 +12,9 @@ class GitRepoService {
     this.gitRepoData = gitrepodata;
   }
 
-  async getProjects() {
+  async getRepos() {
     try {
-      const projects = await this.gitRepoData.getAllProjects();
+      const projects = await this.gitRepoData.getAllRepos();
       return ServiceResponse(StatusCodes.OK, projects);
     } catch (error) {
       return ServiceResponse(
@@ -24,9 +24,9 @@ class GitRepoService {
     }
   }
 
-  async getProjectsFiltered(language: string, sort: 'asc' | 'desc', qty: number) {
+  async getFilteredRepos(language: string, sort: 'asc' | 'desc', qty: number) {
     try {
-      const projects = await this.gitRepoData.getProjectsByLang(language, sort, qty);
+      const projects = await this.gitRepoData.getReposByLang(language, sort, qty);
       return ServiceResponse(StatusCodes.OK, projects);
     } catch (error) {
       return ServiceResponse(
@@ -41,7 +41,7 @@ class GitRepoService {
       const languages = await this.gitRepoData.getRepoLangs();
       const data = languages.map((lang) => ({
         language: lang,
-        encodedLanguage: encodeURIComponent(lang),
+        encoded: encodeURIComponent(lang),
       }));
       return ServiceResponse(StatusCodes.OK, data);
     } catch (error) {

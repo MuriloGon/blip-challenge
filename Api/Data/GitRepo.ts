@@ -5,39 +5,39 @@ import {
 
 class Repo implements IRepos {
   constructor(
-    public readonly repoName: string,
+    public readonly orgName: string,
   ) { }
 
-  async getAllProjects(): Promise<RepoData[]> {
+  async getAllRepos(): Promise<RepoData[]> {
     const response = await axios.request<BaseRepoData[]>({
-      url: `https://api.github.com/orgs/${this.repoName}/repos`,
+      url: `https://api.github.com/orgs/${this.orgName}/repos`,
       method: 'GET',
       headers: { Accept: 'application/vnd.github.v3+json' },
     });
-    const rawProjectsData = response.data;
-    const output = rawProjectsData.map(RepoDto);
+    const rawReposData = response.data;
+    const output = rawReposData.map(RepoDto);
     return output;
   }
 
-  async getProjectsByLang(language: string, sort: 'desc' | 'asc', qty: number): Promise<RepoData[]> {
-    const projects = await this.getAllProjects();
+  async getReposByLang(language: string, sort: 'desc' | 'asc', qty: number): Promise<RepoData[]> {
+    const repos = await this.getAllRepos();
 
-    const filteredByLang = projects.filter(
-      (project) => project.language.toLowerCase() === language.toLowerCase(),
+    const filteredByLang = repos.filter(
+      (repo) => repo.language.toLowerCase() === language.toLowerCase(),
     );
 
-    const filteredProjs = filteredByLang.sort((a, b) => {
+    const filteredRepos = filteredByLang.sort((a, b) => {
       if (sort === 'asc') return a.createdAt.getTime() - b.createdAt.getTime();
       if (sort === 'desc') return b.createdAt.getTime() - a.createdAt.getTime();
       return 0;
     });
 
-    return filteredProjs.slice(0, qty);
+    return filteredRepos.slice(0, qty);
   }
 
   async getRepoLangs(): Promise<string[]> {
-    const projects = await this.getAllProjects();
-    const langs = projects.map(({ language }) => language);
+    const repos = await this.getAllRepos();
+    const langs = repos.map(({ language }) => language);
     const uniqueLangs = new Set(langs);
     return [...uniqueLangs.values()].sort();
   }

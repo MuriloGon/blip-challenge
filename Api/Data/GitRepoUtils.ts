@@ -17,8 +17,8 @@ export interface RepoData {
 }
 
 export interface IRepos {
-  getAllProjects(): Promise<RepoData[]>;
-  getProjectsByLang(language: string, sort: 'desc' | 'asc', qty?: number): Promise<RepoData[]>
+  getAllRepos(): Promise<RepoData[]>;
+  getReposByLang(language: string, sort: 'desc' | 'asc', qty?: number): Promise<RepoData[]>
   getRepoLangs(): Promise<string[]>
 }
 
