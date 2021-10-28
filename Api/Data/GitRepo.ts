@@ -6,12 +6,7 @@ import {
 class Repo implements IRepos {
   constructor(
     public readonly repoName: string,
-    public readonly maxResponsesCount: number = 5,
   ) { }
-
-  private limitOutput<T>(input: Array<T>) {
-    return input.slice(0, this.maxResponsesCount);
-  }
 
   async getAllProjects(): Promise<RepoData[]> {
     const response = await axios.request<BaseRepoData[]>({
@@ -20,11 +15,11 @@ class Repo implements IRepos {
       headers: { Accept: 'application/vnd.github.v3+json' },
     });
     const rawProjectsData = response.data;
-    const output = this.limitOutput(rawProjectsData.map(RepoDto));
+    const output = rawProjectsData.map(RepoDto);
     return output;
   }
 
-  async getProjectsByLang(language: string, sort: 'desc' | 'asc'): Promise<RepoData[]> {
+  async getProjectsByLang(language: string, sort: 'desc' | 'asc', qty: number): Promise<RepoData[]> {
     const projects = await this.getAllProjects();
 
     const filteredByLang = projects.filter(
@@ -36,7 +31,8 @@ class Repo implements IRepos {
       if (sort === 'desc') return b.createdAt.getTime() - a.createdAt.getTime();
       return 0;
     });
-    return this.limitOutput(filteredProjs);
+
+    return filteredProjs.slice(0, qty);
   }
 
   async getRepoLangs(): Promise<string[]> {
