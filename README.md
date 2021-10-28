@@ -64,7 +64,7 @@ List all repositories to a github organization and sort it based on repo's creat
 | Name     |  Type  |    In |                                                                                                       Description |
 | -------- | :----: | ----: | ----------------------------------------------------------------------------------------------------------------: |
 | orgName  | string | param |         `Required` <br/> Github organization name used to find the repositories with a determined main `language` |
-| language | string | query |               `Required` <br/> `Case Insensitive` <br/> Language to find all repos in a organization (`orgName`). |
+| language | string | param |               `Required` <br/> `Case Insensitive` <br/> Language to find all repos in a organization (`orgName`). |
 | qty      | number | query |                                             `Optional` <br/> `Default: 10` <br/> Number of repositories to return |
 | sort     | string | query | `Optional` <br/> `Default: desc` <br/> Define projects sort by repository name. Accepted entries `desc` and `asc` |
 
@@ -91,6 +91,6 @@ Status: 200 Ok
     "url": "https://github.com/takenet/library.logging",
     "language": "C#",
     "createdAt": "2013-10-25T15:18:07.000Z"
-  },
+  }
 ]
 ```
