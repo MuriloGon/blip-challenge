@@ -4,7 +4,7 @@ Technical challenge to TakeBlip. The objetive is use the BlipBot that consume a 
 
 ## Demo
 
-
+https://user-images.githubusercontent.com/45644220/139341028-e5e5d28d-1883-4dfa-bcb3-27b3be833064.mp4
 
 ## API Documentation
 
