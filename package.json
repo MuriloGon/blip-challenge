@@ -2,9 +2,11 @@
   "name": "blip-challenge",
   "version": "1.0.0",
   "description": "",
-  "main": "Api/index.ts",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "ts-node ."
+    "start": "node .",
+    "build": "tsc",
+    "dev": "ts-node ."
   },
   "keywords": [],
   "author": "",
