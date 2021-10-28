@@ -1,6 +1,28 @@
+<p align="center">
+  <img alt="Language count" src="https://img.shields.io/github/languages/count/MuriloGon/blip-challenge?color=%2304D361&style=flat-square">
+
+  <img alt="Repository Size" src="https://img.shields.io/github/repo-size/MuriloGon/blip-challenge?style=flat-square">
+  
+  <a href="https://github.com/MuriloGon/blip-challenge/commits/master">
+    <img alt="Last commit" src="https://img.shields.io/github/last-commit/MuriloGon/blip-challenge?style=flat-square">
+  </a>
+
+
+  <a href="https://github.com/MuriloGon/blip-challenge/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/MuriloGon/blip-challenge?style=social">
+  </a>
+</p>
+<h1 align="center">
+    <img src="./assets/banner.svg" />
+</h1>
+
+<h2 align="center"> 
+	Technical challenge Take Blip
+</h2>
+
 ## About
 
-Technical challenge to TakeBlip. The objetive is use the BlipBot that consume a custom made API to list projects based on its main language and sort by the date of creation.
+Technical challenge to Take Blip. The objetive is use the Take Blip plataform to create a chatbot that consumes a custom-made API to list projects based on its main language and sort by the date of creation to a given github organization (takenet).
 
 ## Demo
 
