@@ -1,3 +1,11 @@
+## About
+
+Technical challenge to TakeBlip. The objetive is use the BlipBot that consume a custom made API to list projects based on its main language and sort by the date of creation.
+
+## Demo
+
+
+
 ## API Documentation
 
 ```bash
