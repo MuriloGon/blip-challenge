@@ -1,4 +1,4 @@
-import { StatusCodes, ReasonPhrases } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import GitRepoData from '../Data/GitRepo';
 import { ServiceResponse } from '../utils/Api';
 
@@ -18,8 +18,8 @@ class GitRepoService {
       return ServiceResponse(StatusCodes.OK, projects);
     } catch (error) {
       return ServiceResponse(
-        StatusCodes.INTERNAL_SERVER_ERROR,
-        { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
+        StatusCodes.NOT_FOUND,
+        { error: 'Org not found' },
       );
     }
   }
@@ -30,8 +30,8 @@ class GitRepoService {
       return ServiceResponse(StatusCodes.OK, projects);
     } catch (error) {
       return ServiceResponse(
-        StatusCodes.INTERNAL_SERVER_ERROR,
-        { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
+        StatusCodes.NOT_FOUND,
+        { error: 'Org not found' },
       );
     }
   }
@@ -46,8 +46,8 @@ class GitRepoService {
       return ServiceResponse(StatusCodes.OK, data);
     } catch (error) {
       return ServiceResponse(
-        StatusCodes.INTERNAL_SERVER_ERROR,
-        { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
+        StatusCodes.NOT_FOUND,
+        { error: 'Org not found' },
       );
     }
   }
