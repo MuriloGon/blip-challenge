@@ -7,7 +7,6 @@
     <img alt="Last commit" src="https://img.shields.io/github/last-commit/MuriloGon/blip-challenge?style=flat-square">
   </a>
 
-
   <a href="https://github.com/MuriloGon/blip-challenge/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/MuriloGon/blip-challenge?style=social">
   </a>
@@ -23,6 +22,42 @@
 ## About
 
 Technical challenge to Take Blip. The objetive is use the Take Blip plataform to create a chatbot that consumes a custom-made API to list projects based on its main language and sort by the date of creation to a given github organization (takenet).
+
+## Tools and Packages
+
+- **Vscode**: text editor
+- **Heroku**: API deploy
+- **Axios**: http requests
+- **Cors**: cross origin middleware
+- **Express**: Node server
+- **Http-status-codes**: Http status codes helper
+- **Joi**: Parameters validation
+
+## Installation, run and test
+
+### Requirements
+
+- Node v16.7.0+
+
+### Installation
+
+```bash
+npm install
+```
+
+### Running locally
+
+The server will run locally at `http://localhost:3000/`
+
+```bash
+npm run dev
+```
+
+### Test
+
+```bash
+npm test
+```
 
 ## Demo
 
