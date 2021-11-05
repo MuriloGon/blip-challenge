@@ -126,6 +126,7 @@ Status: 404 Not Found
 ### <b>`GET`</b> /repositories/{orgName}/{language}
 
 <summary>
+
 List all repositories to a github organization and sort it based on repo's creation date.
 
 #### Code example
@@ -206,4 +207,5 @@ Status: 400 Bad Request
   "error": "\"qty\" must be greater than 0"
 }
 ```
+
 </summary>
