@@ -125,6 +125,8 @@ Status: 404 Not Found
 
 ### <b>`GET`</b> /repositories/{orgName}/{language}
 
+<details>
+
 <summary>
 
 List all repositories to a github organization and sort it based on repo's creation date.
@@ -209,3 +211,7 @@ Status: 400 Bad Request
 ```
 
 </summary>
+	
+</details>
+
+	
